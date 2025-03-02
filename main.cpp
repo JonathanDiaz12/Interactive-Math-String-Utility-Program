@@ -10,6 +10,8 @@ int main() {
     int Menu_Choice = 0; // Initialize Menu_Choice to a value that is not equal to Menu_Quit
     int Factorize,f=1,i=1;
     int row, space;
+    string Number_Choice;
+    int ODD =0, EVEN = 0 ,Default =1 ,User_Limit;
     // Use a while loop to keep the program running until the user chooses to quit
     while (Menu_Choice != Menu_Quit) {
         cout << "Interactive Utility Program" << endl;
@@ -46,10 +48,51 @@ int main() {
                     ++k;
                 }
                 cout << endl;
-            }cout<<"==========================="<< endl;    
-        }else if(Menu_Choice==3){
+            }
+            cout << endl;
+            cout << "===========================" << endl;    
+        } else if (Menu_Choice == 3) {
+            cout << "Do you want the sum of even or odd numbers? (Type 'Odd' or 'Even') ";
+            cin >> Number_Choice;
+            cout << "Enter the Maximum number to sum: ";
+            cin >> User_Limit;
+            do {
+                if (Default % 2 == 0) {
+                    EVEN += Default;
+                } else {
+                    ODD += Default;
+                }
+                Default++;
+            } while (Default <= User_Limit);
+
+            if (Number_Choice == "Even") {
+                cout << "The sum of even numbers from 1 to " << User_Limit << " is: " << EVEN << endl;
+            } else if (Number_Choice == "Odd") {
+                cout << "The sum of odd numbers from 1 to " << User_Limit << " is: " << ODD << endl;
+            }
+        }else if(Menu_Choice == 4){
+            string str;
+            cout<<"Enter a string to reverse: ";
+            cin>>str;
+            int left = 0;
+            int right = str.length() - 1;
+            cout<<"The reverse of the string is: ";
+            while (right > left)
+            {
+                char temp = str[left];
+                str[left] = str[right];
+                str[right] = temp;
+                left++;
+                right--;
+            }
+            cout<<str<<endl;
             
+        }else if (Menu_Choice == 5) {
+            cout << "Goodbye!" << endl;
+            return 0;
+        } else {
+            cout << "Invalid choice. Please try again." << endl;
         }
+        return 0;
     }
-    return 0;
 }
