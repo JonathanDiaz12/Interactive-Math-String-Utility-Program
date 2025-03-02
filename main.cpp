@@ -52,36 +52,36 @@ int main() {
             cout << endl;
             cout << "===========================" << endl;    
         } else if (Menu_Choice == 3) {
-            cout << "Do you want the sum of even or odd numbers? (Type 'Odd' or 'Even') ";
+            cout << "Do you want the sum of even or odd numbers? (Type 'Odd' or 'Even') ";//gets user input for even or odf
             cin >> Number_Choice;
-            cout << "Enter the Maximum number to sum: ";
+            cout << "Enter the Maximum number to sum: "; //gets user input for the maximum number to sum
             cin >> User_Limit;
             do {
-                if (Default % 2 == 0) {
+                if (Default % 2 == 0) { //checks if the number is even or odd
                     EVEN += Default;
                 } else {
                     ODD += Default;
                 }
-                Default++;
-            } while (Default <= User_Limit);
+                Default++;//increments the number
+            } while (Default <= User_Limit);//checks if the number is less than the user input
 
             if (Number_Choice == "Even") {
-                cout << "The sum of even numbers from 1 to " << User_Limit << " is: " << EVEN << endl;
+                cout << "The sum of even numbers from 1 to " << User_Limit << " is: " << EVEN << endl;//prints the sum of even numbers
             } else if (Number_Choice == "Odd") {
-                cout << "The sum of odd numbers from 1 to " << User_Limit << " is: " << ODD << endl;
+                cout << "The sum of odd numbers from 1 to " << User_Limit << " is: " << ODD << endl;//prints the sum of odd numbers
             }
         }else if(Menu_Choice == 4){
             string str;
-            cout<<"Enter a string to reverse: ";
+            cout<<"Enter a string to reverse: ";//  gets user input for the string
             cin>>str;
-            int left = 0;
+            int left = 0;// initializes the left and right variables
             int right = str.length() - 1;
             cout<<"The reverse of the string is: ";
             while (right > left)
             {
-                char temp = str[left];
-                str[left] = str[right];
-                str[right] = temp;
+                char temp = str[left];//swaps the left and right characters
+                str[left] = str[right];//swaps the left and right characters
+                str[right] = temp;//swaps the left and right characters
                 left++;
                 right--;
             }
